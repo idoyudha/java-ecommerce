@@ -5,16 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>multiwarehouse.ecommerce</groupId>
-        <artifactId>java-ecommerce</artifactId>
+        <artifactId>kafka</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>payment_service</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>payment_domain</module>
-        <module>payment_dataaccess</module>
-        <module>payment_application</module>
-        <module>payment_container</module>
-    </modules>
+    <artifactId>kafka_consumer</artifactId>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
 </project>

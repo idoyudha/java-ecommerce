@@ -14,11 +14,13 @@
     <modules>
         <module>kafka_model</module>
         <module>kafka_config_data</module>
+        <module>kafka_consumer</module>
+        <module>kafka_producer</module>
     </modules>
 
     <properties>
         <avro.version>1.11.0</avro.version>
-        <spring-kafka.version>2.7.10</spring-kafka.version>
+        <spring-kafka.version>3.0.0</spring-kafka.version>
     </properties>
 
     <dependencyManagement>
