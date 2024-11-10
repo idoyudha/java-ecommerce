@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>payment_domain</module>
+        <module>payment_dataaccess</module>
     </modules>
 
     <properties>
