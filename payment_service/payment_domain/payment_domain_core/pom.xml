@@ -10,6 +10,15 @@
     </parent>
 
     <artifactId>payment_domain_core</artifactId>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>multiwarehouse.ecommerce</groupId>
+            <artifactId>common_domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
