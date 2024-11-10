@@ -10,6 +10,10 @@
     </parent>
 
     <artifactId>kafka</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>kafka_model</module>
+    </modules>
 
     <properties>
         <avro.version>1.11.0</avro.version>

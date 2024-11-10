@@ -1,0 +1,58 @@
+{
+  "namespace": "multiwarehouse.ecommerce.payment.avro.model",
+  "type": "record",
+  "name": "PaymentCreatedAvroModel",
+  "fields": [
+    {
+      "name": "paymentId",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "referenceId",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "paymentMethod",
+      "type": {
+        "type": "enum",
+        "name": "PaymentMethod",
+        "symbols": ["DEBIT", "CREDIT", "CASH", "QRIS"]
+      }
+
+    },
+    {
+      "name": "paymentStatus",
+      "type": {
+        "type": "enum",
+        "name": "PaymentStatus",
+        "symbols": ["ONPROCESS", "SUCCESS", "FAILED"]
+      }
+    },
+    {
+      "name": "failedMessage",
+      "type": "string"
+    },
+    {
+      "name": "amount",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 10,
+        "scale": 2
+      }
+    },
+    {
+      "name": "createdAt",
+      "type": {
+        "type": "long",
+        "logicalType": "timestamp-millis"
+      }
+    }
+  ]
+}

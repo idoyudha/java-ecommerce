@@ -12,6 +12,7 @@
         <module>common</module>
         <module>common/common_domain</module>
         <module>payment_service</module>
+        <module>kafka</module>
     </modules>
 
     <properties>
