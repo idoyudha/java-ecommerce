@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>kafka_model</module>
+        <module>kafka_config_data</module>
     </modules>
 
     <properties>
