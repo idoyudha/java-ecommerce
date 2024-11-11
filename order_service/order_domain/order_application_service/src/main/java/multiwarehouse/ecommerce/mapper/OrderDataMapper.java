@@ -33,7 +33,7 @@ public class OrderDataMapper {
                 .toList();
     }
 
-    private CreateOrderResponse orderToCreateOrderResponse(Order order) {
+    public CreateOrderResponse orderToCreateOrderResponse(Order order) {
         return new CreateOrderResponse(order.getId(), order.getOrderStatus(), order.getTotalPrice(), order.getCreatedAt());
     }
 }
