@@ -1,0 +1,40 @@
+{
+  "namespace": "multiwarehouse.ecommerce.payment.avro.model",
+  "type": "record",
+  "name": "PaymentUpdateAvroModel",
+  "fields": [
+    {
+      "name": "id",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "payment_id",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "reference_id",
+      "type": {
+        "type": "string",
+        "logicalType": "uuid"
+      }
+    },
+    {
+      "name": "paymentStatus",
+      "type": {
+        "type": "enum",
+        "name": "PaymentStatus",
+        "symbols": ["ONPROCESS", "SUCCESS", "FAILED"]
+      }
+    },
+    {
+      "name": "failedMessage",
+      "type": "string"
+    }
+  ]
+}
