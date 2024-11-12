@@ -18,27 +18,6 @@
       }
     },
     {
-      "name": "paymentMethod",
-      "type": {
-        "type": "enum",
-        "name": "PaymentMethod",
-        "symbols": ["DEBIT", "CREDIT", "CASH", "QRIS"]
-      }
-
-    },
-    {
-      "name": "paymentStatus",
-      "type": {
-        "type": "enum",
-        "name": "PaymentStatus",
-        "symbols": ["ONPROCESS", "SUCCESS", "FAILED"]
-      }
-    },
-    {
-      "name": "failedMessage",
-      "type": "string"
-    },
-    {
       "name": "amount",
       "type": {
         "type": "bytes",
