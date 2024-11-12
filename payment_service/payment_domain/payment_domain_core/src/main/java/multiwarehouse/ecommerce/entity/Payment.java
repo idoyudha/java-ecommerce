@@ -17,14 +17,6 @@ public class Payment extends AggregateRoot<PaymentId> {
         paymentStatus = PaymentStatus.ONPROGRESS;
     }
 
-    public void createPayment() {
-        if (amountEquals(amount) && referenceIdEquals(referenceId)) {
-            paymentStatus = PaymentStatus.SUCCESS;
-        } else {
-            paymentStatus = PaymentStatus.FAILED;
-        }
-    }
-
     private boolean referenceIdEquals(ReferenceId referenceId) {
         return this.referenceId.equals(referenceId);
     }
