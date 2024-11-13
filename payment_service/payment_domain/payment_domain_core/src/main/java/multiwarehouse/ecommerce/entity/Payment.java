@@ -14,7 +14,7 @@ public class Payment extends AggregateRoot<PaymentId> {
 
     public void initializePayment() {
         setId(new PaymentId(UUID.randomUUID()));
-        paymentStatus = PaymentStatus.ONPROGRESS;
+        paymentStatus = PaymentStatus.PENDING;
     }
 
     private boolean referenceIdEquals(ReferenceId referenceId) {

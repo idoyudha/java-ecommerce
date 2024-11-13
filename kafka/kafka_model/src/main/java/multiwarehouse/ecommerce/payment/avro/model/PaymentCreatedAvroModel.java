@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -5463372365631787013L;
+  private static final long serialVersionUID = -6092037281516279553L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PaymentCreatedAvroModel\",\"namespace\":\"multiwarehouse.ecommerce.payment.avro.model\",\"fields\":[{\"name\":\"paymentId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"referenceId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"paymentMethod\",\"type\":{\"type\":\"enum\",\"name\":\"PaymentMethod\",\"symbols\":[\"DEBIT\",\"CREDIT\",\"CASH\",\"QRIS\"]}},{\"name\":\"paymentStatus\",\"type\":{\"type\":\"enum\",\"name\":\"PaymentStatus\",\"symbols\":[\"ONPROCESS\",\"SUCCESS\",\"FAILED\"]}},{\"name\":\"failedMessage\",\"type\":{\"type\":\"string\",\"avro.java.string\":\"String\"}},{\"name\":\"amount\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":10,\"scale\":2}},{\"name\":\"createdAt\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"PaymentCreatedAvroModel\",\"namespace\":\"multiwarehouse.ecommerce.payment.avro.model\",\"fields\":[{\"name\":\"paymentId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"referenceId\",\"type\":{\"type\":\"string\",\"logicalType\":\"uuid\"}},{\"name\":\"amount\",\"type\":{\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":10,\"scale\":2}},{\"name\":\"createdAt\",\"type\":{\"type\":\"long\",\"logicalType\":\"timestamp-millis\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -79,9 +79,6 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
 
   private java.lang.String paymentId;
   private java.lang.String referenceId;
-  private multiwarehouse.ecommerce.payment.avro.model.PaymentMethod paymentMethod;
-  private multiwarehouse.ecommerce.payment.avro.model.PaymentStatus paymentStatus;
-  private java.lang.String failedMessage;
   private java.math.BigDecimal amount;
   private java.time.Instant createdAt;
 
@@ -96,18 +93,12 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
    * All-args constructor.
    * @param paymentId The new value for paymentId
    * @param referenceId The new value for referenceId
-   * @param paymentMethod The new value for paymentMethod
-   * @param paymentStatus The new value for paymentStatus
-   * @param failedMessage The new value for failedMessage
    * @param amount The new value for amount
    * @param createdAt The new value for createdAt
    */
-  public PaymentCreatedAvroModel(java.lang.String paymentId, java.lang.String referenceId, multiwarehouse.ecommerce.payment.avro.model.PaymentMethod paymentMethod, multiwarehouse.ecommerce.payment.avro.model.PaymentStatus paymentStatus, java.lang.String failedMessage, java.math.BigDecimal amount, java.time.Instant createdAt) {
+  public PaymentCreatedAvroModel(java.lang.String paymentId, java.lang.String referenceId, java.math.BigDecimal amount, java.time.Instant createdAt) {
     this.paymentId = paymentId;
     this.referenceId = referenceId;
-    this.paymentMethod = paymentMethod;
-    this.paymentStatus = paymentStatus;
-    this.failedMessage = failedMessage;
     this.amount = amount;
     this.createdAt = createdAt.truncatedTo(java.time.temporal.ChronoUnit.MILLIS);
   }
@@ -119,20 +110,14 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
     switch (field$) {
     case 0: return paymentId;
     case 1: return referenceId;
-    case 2: return paymentMethod;
-    case 3: return paymentStatus;
-    case 4: return failedMessage;
-    case 5: return amount;
-    case 6: return createdAt;
+    case 2: return amount;
+    case 3: return createdAt;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
 
   private static final org.apache.avro.Conversion<?>[] conversions =
       new org.apache.avro.Conversion<?>[] {
-      null,
-      null,
-      null,
       null,
       null,
       new org.apache.avro.Conversions.DecimalConversion(),
@@ -151,11 +136,8 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
     switch (field$) {
     case 0: paymentId = value$ != null ? value$.toString() : null; break;
     case 1: referenceId = value$ != null ? value$.toString() : null; break;
-    case 2: paymentMethod = (multiwarehouse.ecommerce.payment.avro.model.PaymentMethod)value$; break;
-    case 3: paymentStatus = (multiwarehouse.ecommerce.payment.avro.model.PaymentStatus)value$; break;
-    case 4: failedMessage = value$ != null ? value$.toString() : null; break;
-    case 5: amount = (java.math.BigDecimal)value$; break;
-    case 6: createdAt = (java.time.Instant)value$; break;
+    case 2: amount = (java.math.BigDecimal)value$; break;
+    case 3: createdAt = (java.time.Instant)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -192,57 +174,6 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
    */
   public void setReferenceId(java.lang.String value) {
     this.referenceId = value;
-  }
-
-  /**
-   * Gets the value of the 'paymentMethod' field.
-   * @return The value of the 'paymentMethod' field.
-   */
-  public multiwarehouse.ecommerce.payment.avro.model.PaymentMethod getPaymentMethod() {
-    return paymentMethod;
-  }
-
-
-  /**
-   * Sets the value of the 'paymentMethod' field.
-   * @param value the value to set.
-   */
-  public void setPaymentMethod(multiwarehouse.ecommerce.payment.avro.model.PaymentMethod value) {
-    this.paymentMethod = value;
-  }
-
-  /**
-   * Gets the value of the 'paymentStatus' field.
-   * @return The value of the 'paymentStatus' field.
-   */
-  public multiwarehouse.ecommerce.payment.avro.model.PaymentStatus getPaymentStatus() {
-    return paymentStatus;
-  }
-
-
-  /**
-   * Sets the value of the 'paymentStatus' field.
-   * @param value the value to set.
-   */
-  public void setPaymentStatus(multiwarehouse.ecommerce.payment.avro.model.PaymentStatus value) {
-    this.paymentStatus = value;
-  }
-
-  /**
-   * Gets the value of the 'failedMessage' field.
-   * @return The value of the 'failedMessage' field.
-   */
-  public java.lang.String getFailedMessage() {
-    return failedMessage;
-  }
-
-
-  /**
-   * Sets the value of the 'failedMessage' field.
-   * @param value the value to set.
-   */
-  public void setFailedMessage(java.lang.String value) {
-    this.failedMessage = value;
   }
 
   /**
@@ -322,9 +253,6 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
 
     private java.lang.String paymentId;
     private java.lang.String referenceId;
-    private multiwarehouse.ecommerce.payment.avro.model.PaymentMethod paymentMethod;
-    private multiwarehouse.ecommerce.payment.avro.model.PaymentStatus paymentStatus;
-    private java.lang.String failedMessage;
     private java.math.BigDecimal amount;
     private java.time.Instant createdAt;
 
@@ -347,25 +275,13 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
         this.referenceId = data().deepCopy(fields()[1].schema(), other.referenceId);
         fieldSetFlags()[1] = other.fieldSetFlags()[1];
       }
-      if (isValidValue(fields()[2], other.paymentMethod)) {
-        this.paymentMethod = data().deepCopy(fields()[2].schema(), other.paymentMethod);
+      if (isValidValue(fields()[2], other.amount)) {
+        this.amount = data().deepCopy(fields()[2].schema(), other.amount);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
-      if (isValidValue(fields()[3], other.paymentStatus)) {
-        this.paymentStatus = data().deepCopy(fields()[3].schema(), other.paymentStatus);
+      if (isValidValue(fields()[3], other.createdAt)) {
+        this.createdAt = data().deepCopy(fields()[3].schema(), other.createdAt);
         fieldSetFlags()[3] = other.fieldSetFlags()[3];
-      }
-      if (isValidValue(fields()[4], other.failedMessage)) {
-        this.failedMessage = data().deepCopy(fields()[4].schema(), other.failedMessage);
-        fieldSetFlags()[4] = other.fieldSetFlags()[4];
-      }
-      if (isValidValue(fields()[5], other.amount)) {
-        this.amount = data().deepCopy(fields()[5].schema(), other.amount);
-        fieldSetFlags()[5] = other.fieldSetFlags()[5];
-      }
-      if (isValidValue(fields()[6], other.createdAt)) {
-        this.createdAt = data().deepCopy(fields()[6].schema(), other.createdAt);
-        fieldSetFlags()[6] = other.fieldSetFlags()[6];
       }
     }
 
@@ -383,25 +299,13 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
         this.referenceId = data().deepCopy(fields()[1].schema(), other.referenceId);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.paymentMethod)) {
-        this.paymentMethod = data().deepCopy(fields()[2].schema(), other.paymentMethod);
+      if (isValidValue(fields()[2], other.amount)) {
+        this.amount = data().deepCopy(fields()[2].schema(), other.amount);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.paymentStatus)) {
-        this.paymentStatus = data().deepCopy(fields()[3].schema(), other.paymentStatus);
+      if (isValidValue(fields()[3], other.createdAt)) {
+        this.createdAt = data().deepCopy(fields()[3].schema(), other.createdAt);
         fieldSetFlags()[3] = true;
-      }
-      if (isValidValue(fields()[4], other.failedMessage)) {
-        this.failedMessage = data().deepCopy(fields()[4].schema(), other.failedMessage);
-        fieldSetFlags()[4] = true;
-      }
-      if (isValidValue(fields()[5], other.amount)) {
-        this.amount = data().deepCopy(fields()[5].schema(), other.amount);
-        fieldSetFlags()[5] = true;
-      }
-      if (isValidValue(fields()[6], other.createdAt)) {
-        this.createdAt = data().deepCopy(fields()[6].schema(), other.createdAt);
-        fieldSetFlags()[6] = true;
       }
     }
 
@@ -486,126 +390,6 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
     }
 
     /**
-      * Gets the value of the 'paymentMethod' field.
-      * @return The value.
-      */
-    public multiwarehouse.ecommerce.payment.avro.model.PaymentMethod getPaymentMethod() {
-      return paymentMethod;
-    }
-
-
-    /**
-      * Sets the value of the 'paymentMethod' field.
-      * @param value The value of 'paymentMethod'.
-      * @return This builder.
-      */
-    public multiwarehouse.ecommerce.payment.avro.model.PaymentCreatedAvroModel.Builder setPaymentMethod(multiwarehouse.ecommerce.payment.avro.model.PaymentMethod value) {
-      validate(fields()[2], value);
-      this.paymentMethod = value;
-      fieldSetFlags()[2] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'paymentMethod' field has been set.
-      * @return True if the 'paymentMethod' field has been set, false otherwise.
-      */
-    public boolean hasPaymentMethod() {
-      return fieldSetFlags()[2];
-    }
-
-
-    /**
-      * Clears the value of the 'paymentMethod' field.
-      * @return This builder.
-      */
-    public multiwarehouse.ecommerce.payment.avro.model.PaymentCreatedAvroModel.Builder clearPaymentMethod() {
-      paymentMethod = null;
-      fieldSetFlags()[2] = false;
-      return this;
-    }
-
-    /**
-      * Gets the value of the 'paymentStatus' field.
-      * @return The value.
-      */
-    public multiwarehouse.ecommerce.payment.avro.model.PaymentStatus getPaymentStatus() {
-      return paymentStatus;
-    }
-
-
-    /**
-      * Sets the value of the 'paymentStatus' field.
-      * @param value The value of 'paymentStatus'.
-      * @return This builder.
-      */
-    public multiwarehouse.ecommerce.payment.avro.model.PaymentCreatedAvroModel.Builder setPaymentStatus(multiwarehouse.ecommerce.payment.avro.model.PaymentStatus value) {
-      validate(fields()[3], value);
-      this.paymentStatus = value;
-      fieldSetFlags()[3] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'paymentStatus' field has been set.
-      * @return True if the 'paymentStatus' field has been set, false otherwise.
-      */
-    public boolean hasPaymentStatus() {
-      return fieldSetFlags()[3];
-    }
-
-
-    /**
-      * Clears the value of the 'paymentStatus' field.
-      * @return This builder.
-      */
-    public multiwarehouse.ecommerce.payment.avro.model.PaymentCreatedAvroModel.Builder clearPaymentStatus() {
-      paymentStatus = null;
-      fieldSetFlags()[3] = false;
-      return this;
-    }
-
-    /**
-      * Gets the value of the 'failedMessage' field.
-      * @return The value.
-      */
-    public java.lang.String getFailedMessage() {
-      return failedMessage;
-    }
-
-
-    /**
-      * Sets the value of the 'failedMessage' field.
-      * @param value The value of 'failedMessage'.
-      * @return This builder.
-      */
-    public multiwarehouse.ecommerce.payment.avro.model.PaymentCreatedAvroModel.Builder setFailedMessage(java.lang.String value) {
-      validate(fields()[4], value);
-      this.failedMessage = value;
-      fieldSetFlags()[4] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'failedMessage' field has been set.
-      * @return True if the 'failedMessage' field has been set, false otherwise.
-      */
-    public boolean hasFailedMessage() {
-      return fieldSetFlags()[4];
-    }
-
-
-    /**
-      * Clears the value of the 'failedMessage' field.
-      * @return This builder.
-      */
-    public multiwarehouse.ecommerce.payment.avro.model.PaymentCreatedAvroModel.Builder clearFailedMessage() {
-      failedMessage = null;
-      fieldSetFlags()[4] = false;
-      return this;
-    }
-
-    /**
       * Gets the value of the 'amount' field.
       * @return The value.
       */
@@ -620,9 +404,9 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
       * @return This builder.
       */
     public multiwarehouse.ecommerce.payment.avro.model.PaymentCreatedAvroModel.Builder setAmount(java.math.BigDecimal value) {
-      validate(fields()[5], value);
+      validate(fields()[2], value);
       this.amount = value;
-      fieldSetFlags()[5] = true;
+      fieldSetFlags()[2] = true;
       return this;
     }
 
@@ -631,7 +415,7 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
       * @return True if the 'amount' field has been set, false otherwise.
       */
     public boolean hasAmount() {
-      return fieldSetFlags()[5];
+      return fieldSetFlags()[2];
     }
 
 
@@ -641,7 +425,7 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
       */
     public multiwarehouse.ecommerce.payment.avro.model.PaymentCreatedAvroModel.Builder clearAmount() {
       amount = null;
-      fieldSetFlags()[5] = false;
+      fieldSetFlags()[2] = false;
       return this;
     }
 
@@ -660,9 +444,9 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
       * @return This builder.
       */
     public multiwarehouse.ecommerce.payment.avro.model.PaymentCreatedAvroModel.Builder setCreatedAt(java.time.Instant value) {
-      validate(fields()[6], value);
+      validate(fields()[3], value);
       this.createdAt = value.truncatedTo(java.time.temporal.ChronoUnit.MILLIS);
-      fieldSetFlags()[6] = true;
+      fieldSetFlags()[3] = true;
       return this;
     }
 
@@ -671,7 +455,7 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
       * @return True if the 'createdAt' field has been set, false otherwise.
       */
     public boolean hasCreatedAt() {
-      return fieldSetFlags()[6];
+      return fieldSetFlags()[3];
     }
 
 
@@ -680,7 +464,7 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
       * @return This builder.
       */
     public multiwarehouse.ecommerce.payment.avro.model.PaymentCreatedAvroModel.Builder clearCreatedAt() {
-      fieldSetFlags()[6] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -691,11 +475,8 @@ public class PaymentCreatedAvroModel extends org.apache.avro.specific.SpecificRe
         PaymentCreatedAvroModel record = new PaymentCreatedAvroModel();
         record.paymentId = fieldSetFlags()[0] ? this.paymentId : (java.lang.String) defaultValue(fields()[0]);
         record.referenceId = fieldSetFlags()[1] ? this.referenceId : (java.lang.String) defaultValue(fields()[1]);
-        record.paymentMethod = fieldSetFlags()[2] ? this.paymentMethod : (multiwarehouse.ecommerce.payment.avro.model.PaymentMethod) defaultValue(fields()[2]);
-        record.paymentStatus = fieldSetFlags()[3] ? this.paymentStatus : (multiwarehouse.ecommerce.payment.avro.model.PaymentStatus) defaultValue(fields()[3]);
-        record.failedMessage = fieldSetFlags()[4] ? this.failedMessage : (java.lang.String) defaultValue(fields()[4]);
-        record.amount = fieldSetFlags()[5] ? this.amount : (java.math.BigDecimal) defaultValue(fields()[5]);
-        record.createdAt = fieldSetFlags()[6] ? this.createdAt : (java.time.Instant) defaultValue(fields()[6]);
+        record.amount = fieldSetFlags()[2] ? this.amount : (java.math.BigDecimal) defaultValue(fields()[2]);
+        record.createdAt = fieldSetFlags()[3] ? this.createdAt : (java.time.Instant) defaultValue(fields()[3]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;

@@ -12,6 +12,7 @@ public class Order extends AggregateRoot<OrderId> {
     private final Money totalPrice;
     private final List<OrderItem> orderItems;
     private OrderStatus orderStatus;
+    private Payment payment;
     private CreatedAt createdAt;
 
     public void initializeOrder() {
@@ -46,6 +47,7 @@ public class Order extends AggregateRoot<OrderId> {
         totalPrice = builder.totalPrice;
         orderItems = builder.orderItems;
         orderStatus = builder.orderStatus;
+        payment = builder.payment;
         createdAt = builder.createdAt;
     }
 
@@ -73,6 +75,10 @@ public class Order extends AggregateRoot<OrderId> {
         return orderStatus;
     }
 
+    public Payment getPayment() {
+        return payment;
+    }
+
     public CreatedAt getCreatedAt() {
         return createdAt;
     }
@@ -84,6 +90,7 @@ public class Order extends AggregateRoot<OrderId> {
         private Money totalPrice;
         private List<OrderItem> orderItems;
         private OrderStatus orderStatus;
+        private Payment payment;
         private CreatedAt createdAt;
 
         private Builder() {
@@ -116,6 +123,11 @@ public class Order extends AggregateRoot<OrderId> {
 
         public Builder orderStatus(OrderStatus val) {
             orderStatus = val;
+            return this;
+        }
+
+        public Builder payment(Payment val) {
+            payment = val;
             return this;
         }
 
