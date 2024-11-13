@@ -10,7 +10,6 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/payment_service/payment_message/pom.xml" />
-        <option value="$PROJECT_DIR$/payment_service/payment_messaging/pom.xml" />
       </set>
     </option>
   </component>
