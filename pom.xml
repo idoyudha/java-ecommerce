@@ -13,5 +13,6 @@
         <module>payment_service</module>
         <module>kafka</module>
         <module>order_service</module>
+        <module>infra</module>
     </modules>
 </project>

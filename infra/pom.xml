@@ -9,13 +9,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>payment_service</artifactId>
+    <artifactId>infra</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>payment_domain</module>
-        <module>payment_dataaccess</module>
-        <module>payment_application</module>
-        <module>payment_container</module>
-        <module>payment_messaging</module>
-    </modules>
 </project>
