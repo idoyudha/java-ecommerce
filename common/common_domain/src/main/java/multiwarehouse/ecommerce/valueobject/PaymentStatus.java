@@ -1,7 +1,7 @@
 package multiwarehouse.ecommerce.valueobject;
 
 public enum PaymentStatus {
-    ONPROGRESS,
+    PENDING,
     SUCCESS,
     FAILED
 }

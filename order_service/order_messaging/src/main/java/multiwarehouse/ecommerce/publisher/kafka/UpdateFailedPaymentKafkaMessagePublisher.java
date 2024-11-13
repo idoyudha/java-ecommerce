@@ -30,6 +30,17 @@ public class UpdateFailedPaymentKafkaMessagePublisher implements PaymentFailedRe
 
     @Override
     public void publish(OrderFailedEvent domainEvent) {
+        String orderId = domainEvent.getOrder().getId().getValue().toString();
+        try {
+            PaymentUpdateAvroModel paymentUpdateAvroModel = orderMessagingDataMapper
+                    .orderFailedEventToPaymentRequestAvroModel(domainEvent);
 
+            kafkaProducer.sendWithoutCallback(orderServiceConfigData.getPaymentUpdatedTopicName(),
+                    orderId,
+                    paymentUpdateAvroModel);
+            log.info("Payment failed event published for order id: {}", orderId);
+        } catch (Exception e) {
+            log.error("Error while publishing payment failed event for order id: {}", orderId, e);
+        }
     }
 }
