@@ -1,11 +1,3 @@
 networks:
-  multiwarehouse-ecommerce:
+  ecommerce:
     driver: bridge
-
-volumes:
-  postgres-data:
-  zookeeper-data:
-  zookeeper-log:
-  kafka-broker-1-data:
-  kafka-broker-2-data:
-  kafka-broker-3-data:
