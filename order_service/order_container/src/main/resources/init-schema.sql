@@ -19,10 +19,10 @@ CREATE TABLE "order"."orders" (
   "created_at" TIMESTAMP WITH TIME ZONE NOT NULL,
   CONSTRAINT orders_pkey PRIMARY KEY ("id")
 );
-  
+
 CREATE INDEX idx_user_id ON "order"."orders" ("user_id");
 CREATE INDEX idx_payment_reference_id ON "order"."orders" ("payment_id");
-  
+
 DROP TABLE IF EXISTS "order".order_items CASCADE;
 
 CREATE TABLE "order".order_items (

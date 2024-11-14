@@ -4,6 +4,8 @@ server:
 logging:
   level:
     java.ecommerce: DEBUG
+    org.springframework: DEBUG
+    org.hibernate: DEBUG
 
 order-service:
   payment-created-topic-name: payment-updated
@@ -13,10 +15,10 @@ spring:
   jpa:
     open-in-view: false
     show-sql: true
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        dialect: org.hibernate.dialect.PostgreSQL94Dialect
   datasource:
     url: jdbc:postgresql://localhost:5432/ecommerce?currentSchema=order&binaryTransfer=true&reWriteBatchedInserts=true&stringtype=unspecified
     username: postgres
