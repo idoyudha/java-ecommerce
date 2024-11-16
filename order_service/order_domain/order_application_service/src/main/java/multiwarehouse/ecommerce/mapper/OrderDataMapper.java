@@ -39,7 +39,6 @@ public class OrderDataMapper {
 
     public CreateOrderResponse orderToCreateOrderResponse(Order order) {
         return new CreateOrderResponse(
-                order.getId().getValue(),
                 order.getOrderStatus(),
                 order.getTotalPrice().getAmount(),
                 order.getCreatedAt().getValue().toInstant()

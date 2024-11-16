@@ -31,7 +31,7 @@ CREATE TABLE "order".order_items (
   "product_id" UUID NOT NULL,
   "quantity" UUID NOT NULL,
   "price" NUMERIC(10,2) NOT NULL,
-  "subtotal" NUMERIC(10,2) NOT NULL,
+  "sub_total" NUMERIC(10,2) NOT NULL,
   CONSTRAINT order_items_pkey PRIMARY KEY (id, order_id)
 );
 
@@ -51,7 +51,7 @@ CREATE TABLE "order".order_address (
   "city" CHARACTER VARYING COLLATE pg_catalog."default" NOT NULL,
   "state" CHARACTER VARYING COLLATE pg_catalog."default" NOT NULL,
   "country" CHARACTER VARYING COLLATE pg_catalog."default" NOT NULL,
-  "zipcode" CHARACTER VARYING COLLATE pg_catalog."default" NOT NULL,
+  "zip_code" CHARACTER VARYING COLLATE pg_catalog."default" NOT NULL,
   CONSTRAINT order_address_pkey PRIMARY KEY (id, order_id)
 );
 

@@ -11,6 +11,10 @@ import java.time.ZonedDateTime;
 
 public class OrderDomainServiceImpl implements OrderDomainService {
     @Override
+    public void initializeOrder(Order order) {
+        order.initializeOrder();
+    }
+    @Override
     public OrderPaidEvent payOrder(Order order, DomainEventPublisher<OrderPaidEvent> orderPaidEventDomainEventPublisher) {
         order.paid();
         return new OrderPaidEvent(order, ZonedDateTime.now(ZoneId.of("UTC")), orderPaidEventDomainEventPublisher);

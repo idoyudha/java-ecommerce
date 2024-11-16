@@ -24,9 +24,13 @@ public class OrderCreateHelper {
 
     @Transactional
     public CreateOrderResponse createOrder(CreateOrderCommand createOrderCommand) {
+        log.info("create order: {}", createOrderCommand);
         Order order = orderDataMapper.createOrderCommandToOrder(createOrderCommand);
+        log.info("order mapped: {}", order);
+        orderDomainService.initializeOrder(order);
+        log.info("order initialized: {}", order);
         saveOrder(order);
-        log.info("Order created: {}", order.getId());
+        log.info("order saved: {}", order);
         return orderDataMapper.orderToCreateOrderResponse(order);
     }
 
