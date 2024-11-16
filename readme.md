@@ -10,3 +10,9 @@
 
 ## how to delete application on kubernetes
 ``kubectl delete -f application-deployment-local.yml``
+
+## hot to get detail of pod
+``kubectl describe pod {the-pod-name}``
+
+## how to get logs for pod
+`` kubectl logs order-deployment-5f76d87448-s922h --all-containers``
