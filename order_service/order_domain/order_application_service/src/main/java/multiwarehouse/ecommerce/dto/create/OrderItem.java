@@ -14,7 +14,7 @@ import java.util.UUID;
 @Builder
 public class OrderItem {
     @NotNull
-    private final ProductId productId;
+    private final UUID productId;
     @NotNull
     private final int quantity;
     @NotNull
