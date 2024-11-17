@@ -6,21 +6,25 @@ import lombok.Builder;
 import lombok.Getter;
 import multiwarehouse.ecommerce.valueobject.*;
 
+import java.math.BigDecimal;
+import java.time.Instant;
+import java.util.UUID;
+
 @Getter
 @AllArgsConstructor
 @Builder
 public class GetPaymentByRefIdResponse {
     @NotNull
-    private final PaymentId paymentId;
+    private final UUID paymentId;
     @NotNull
-    private final ReferenceId referenceId;
+    private final UUID referenceId;
     @NotNull
     private final PaymentMethod paymentMethod;
     @NotNull
     private final PaymentStatus paymentStatus;
     private final String failedMessage;
     @NotNull
-    private final Money amount;
+    private final BigDecimal amount;
     @NotNull
-    private final CreatedAt createdAt;
+    private final Instant createdAt;
 }
