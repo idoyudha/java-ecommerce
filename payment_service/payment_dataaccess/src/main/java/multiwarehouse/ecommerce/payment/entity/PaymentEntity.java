@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import multiwarehouse.ecommerce.valueobject.*;
 
+import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -22,9 +24,9 @@ public class PaymentEntity {
     private PaymentMethod paymentMethod;
     @Enumerated(EnumType.STRING)
     private PaymentStatus paymentStatus;
-    private FailedMessage failedMessage;
-    private Money amount;
-    private CreatedAt createdAt;
+    private String failedMessage;
+    private BigDecimal amount;
+    private Instant createdAt;
 
     @Override
     public boolean equals(Object o) {

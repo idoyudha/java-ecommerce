@@ -7,6 +7,7 @@ import multiwarehouse.ecommerce.entity.Payment;
 import multiwarehouse.ecommerce.exception.PaymentNotFoundException;
 import multiwarehouse.ecommerce.mapper.PaymentDataMapper;
 import multiwarehouse.ecommerce.ports.output.repository.PaymentRepository;
+import multiwarehouse.ecommerce.valueobject.ReferenceId;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -25,7 +26,7 @@ public class PaymentGetCommandHandler {
 
     @Transactional
     public GetPaymentByRefIdResponse getPaymentByRefId(GetPaymentByRefIdQuery getPaymentByRefIdQuery) {
-        Optional<Payment> paymentResult = paymentRepository.findPaymentByReferenceId(getPaymentByRefIdQuery.getReferenceId());
+        Optional<Payment> paymentResult = paymentRepository.findPaymentByReferenceId(new ReferenceId(getPaymentByRefIdQuery.getReferenceId()));
         if (paymentResult.isEmpty()) {
             log.error("Payment with reference id: {} not found", getPaymentByRefIdQuery.getReferenceId());
             throw new PaymentNotFoundException("Payment with reference id: " + getPaymentByRefIdQuery.getReferenceId() + " not found");

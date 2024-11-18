@@ -6,10 +6,12 @@ import lombok.Builder;
 import lombok.Getter;
 import multiwarehouse.ecommerce.valueobject.ReferenceId;
 
+import java.util.UUID;
+
 @Getter
 @AllArgsConstructor
 @Builder
 public class GetPaymentByRefIdQuery {
     @NotNull
-    private final ReferenceId referenceId;
+    private final UUID referenceId;
 }

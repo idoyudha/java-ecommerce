@@ -1,9 +1,11 @@
 server:
-  port: 8182
+  port: 8192
 
 logging:
   level:
     java.ecommerce: DEBUG
+    org.springframework: DEBUG
+    org.hibernate: DEBUG
 
 order-service:
   payment-created-topic-name: payment-updated
@@ -18,7 +20,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   datasource:
-    url: jdbc:postgresql://localhost:5432/ecommerce?currentSchema=order&binaryTransfer=true&reWriteBatchedInserts=true&stringtype=unspecified
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=order&binaryTransfer=true&reWriteBatchedInserts=true&stringtype=unspecified
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
