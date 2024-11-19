@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.event.TransactionalEventListener;
 
 @Slf4j
-@Component
+//@Component
 public class PaymentCreatedEventApplicationPublisher {
     private final PaymentCreatedRequestMessagePublisher paymentCreatedRequestMessagePublisher;
 
