@@ -17,22 +17,22 @@ public class PaymentCreateHelper {
     private final PaymentDomainService paymentDomainService;
     private final PaymentRepository paymentRepository;
     private final PaymentDataMapper paymentDataMapper;
-    private final PaymentCreatedRequestMessagePublisher paymentCreatedRequestMessagePublisher;
+//    private final PaymentCreatedRequestMessagePublisher paymentCreatedRequestMessagePublisher;
 
-    public PaymentCreateHelper(PaymentDomainService paymentDomainService, PaymentRepository paymentRepository, PaymentDataMapper paymentDataMapper, PaymentCreatedRequestMessagePublisher paymentCreatedRequestMessagePublisher) {
+    public PaymentCreateHelper(PaymentDomainService paymentDomainService, PaymentRepository paymentRepository, PaymentDataMapper paymentDataMapper) {
         this.paymentDomainService = paymentDomainService;
         this.paymentRepository = paymentRepository;
         this.paymentDataMapper = paymentDataMapper;
-        this.paymentCreatedRequestMessagePublisher = paymentCreatedRequestMessagePublisher;
+//        this.paymentCreatedRequestMessagePublisher = paymentCreatedRequestMessagePublisher;
     }
 
     @Transactional
     public PaymentCreatedEvent createPayment(CreatePaymentCommand createPaymentCommand) {
         Payment payment = paymentDataMapper.createPaymentCommandToPayment(createPaymentCommand);
-        PaymentCreatedEvent paymentCreatedEvent = paymentDomainService.createPayment(payment, paymentCreatedRequestMessagePublisher);
-        log.info("Payment created with id: {}", paymentCreatedEvent.getPayment().getId().getValue());
+//        PaymentCreatedEvent paymentCreatedEvent = paymentDomainService.createPayment(payment, paymentCreatedRequestMessagePublisher);
+//        log.info("Payment created with id: {}", paymentCreatedEvent.getPayment().getId().getValue());
         paymentRepository.save(payment);
-        return paymentCreatedEvent;
+        return new PaymentCreatedEvent(payment, null);
     }
 
     private Payment savePayment(Payment payment) {

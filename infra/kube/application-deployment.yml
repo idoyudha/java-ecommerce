@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: order-service
-          image: asia-southeast2-docker.pkg.dev/com-ecommerce-app/com-ecommerce-app-repository/order.service:1.0-SNAPSHOT
+          image: asia-southeast2-docker.pkg.dev/fluted-bee-440013-s1/multiwarehouse-ecommerce/order.service:1.0-SNAPSHOT
           env:
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:postgresql://postgres-service:5433/postgres?currentSchema=order&binaryTransfer=true&reWriteBatchedInserts=true&stringtype=unspecified"
@@ -90,7 +90,7 @@ spec:
     spec:
       containers:
         - name: payment-service
-          image: asia-southeast2-docker.pkg.dev/com-ecommerce-app/com-ecommerce-app-repository/payment.service:1.0-SNAPSHOT
+          image: asia-southeast2-docker.pkg.dev/fluted-bee-440013-s1/multiwarehouse-ecommerce/payment.service:1.0-SNAPSHOT
           env:
             - name: SPRING_DATASOURCE_URL
               value: "jdbc:postgresql://postgres-service:5433/postgres?currentSchema=payment&binaryTransfer=true&reWriteBatchedInserts=true&stringtype=unspecified"
