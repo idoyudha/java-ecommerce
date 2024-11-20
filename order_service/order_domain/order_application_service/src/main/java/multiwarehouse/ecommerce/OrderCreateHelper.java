@@ -29,6 +29,8 @@ public class OrderCreateHelper {
         log.info("order mapped: {}", order);
         orderDomainService.initializeOrder(order);
         log.info("order initialized: {}", order);
+        log.info("order user id: {}", order.getUserId().getValue());
+        log.info("order total price: {}", order.getTotalPrice().getAmount());
         saveOrder(order);
         log.info("order saved: {}", order);
         return orderDataMapper.orderToCreateOrderResponse(order);
